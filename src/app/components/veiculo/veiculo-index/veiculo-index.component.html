@@ -1,0 +1,43 @@
+<style>
+    .text-dark {
+    color: #1e1725;}
+    body {
+      background-color: #F1C40F;
+    }
+  </style>
+  <body>
+  <h1>Lista de Veiculos</h1>
+  <form class="pure-form">
+    <label for="Id">Id:</label>
+    <input type="text" id="Id" style="background-color: #87f10f;"[(ngModel)]="codigoPesquisa" name="codigoPesquisa">
+    <button type="button" (click)="get()" class="pure-button pure-button-primary text-dark"  style="background-color: #f10fe6;">Pesquisar</button>
+    <button type="button" (click)="create()" class="pure-button text-dark"  style="background-color: #f10fe6;">Novo</button>
+  </form>
+  
+  <table id="tabelaVeiculo" class="pure-table pure-table-bordered">
+    <thead>
+      <tr>
+        <th style="background-color: #f10fe6;">Id</th>
+        <th style="background-color: #f10f0f;">Marca</th>
+        <th style="background-color: #0ff1d3;">Nome</th>
+        <th style="background-color: #867b4f;">Ano do Dodelo</th>
+        <th style="background-color: #7cf10f;">Data Fabricacao</th>
+        <th style="background-color: #f10f0f;">Valor</th>
+        <th style="background-color: #703a42;">Opcionais</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="dadosTabelaVeiculo" style="background-color: #3b81af;" >
+      <tr *ngFor="let veiculo of veiculos">
+        <td>{{veiculo.Id}}</td>
+        <td>{{veiculo.Marca}}</td>
+        <td>{{veiculo.Nome}}</td>
+        <td>{{veiculo.AnoModelo}}</td>
+        <td>{{veiculo.DataFabricacao}}</td>
+        <td>{{veiculo.Valor}}</td>
+        <td>{{veiculo.Opcionais}}</td>
+        <td><a class='pure-menu-link cursor text-dark' (click)='editar(veiculo.Id)'>Editar</a><a class='pure-menu-link cursor text-dark' (click)='desejaExcluir(veiculo.Id)'>Excluir</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

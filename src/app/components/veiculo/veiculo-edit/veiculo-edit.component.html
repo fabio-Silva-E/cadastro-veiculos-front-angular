@@ -1,0 +1,49 @@
+<style>
+    .text-dark {
+    color: #0a0a0a;}
+    body {
+      background-color: #F1C40F;
+    }
+  </style>
+  <body><h1>Edição de veiculo</h1>
+<form class="pure-form pure-form-aligned">
+    <div class="pure-control-group" >
+        <label>Id:</label>
+        <label id="Id" style="background-color: #87f10f;">{{veiculo.Id}}</label>
+    </div>
+    <div class="pure-control-group">
+        <label for="Marca" >Marca:</label>
+        <input type="text" id="Marca" maxlength="50" [(ngModel)]="veiculo.Marca" name="Marca" style="background-color: #0ff11a;">
+        <span class="pure-form-message-inline">*</span>
+    </div>
+    <div class="pure-control-group">
+        <label for="Nome" >Nome:</label>
+        <input type="text" id="Nome" maxlength="100" [(ngModel)]="veiculo.Nome" name="Nome" style="background-color: #44f10f;">
+        <span class="pure-form-message-inline">*</span>
+    </div>
+    <div class="pure-control-group">
+        <label for="AnoModelo" >Ano do Modelo:</label>
+        <input type="text" id="AnoModelo"  [(ngModel)]="veiculo.AnoModelo" name="AnoModelo" style="background-color: #0ff12d;">
+        <span class="pure-form-message-inline">*</span>
+    </div>
+    <div class="pure-control-group">
+        <label for="DataFabricacao" >Data de Fabricação:</label>    
+        <input type="date" id="DataFabricacao" [(ngModel)]="veiculo.DataFabricacao" name="DataFabricacao" style="background-color: #22f10f;">
+        <span class="pure-form-message-inline">*</span>
+    </div>
+    <div class="pure-control-group">
+        <label for="Valor" >Valor:</label>
+        <input type="text" id="Valor"  [(ngModel)]="veiculo.Valor" name="Valor" style="background-color: #0ff153;">
+        <span class="pure-form-message-inline">*</span>
+    </div>
+    <div class="pure-control-group">
+        <label for="Opcionais" >Opcionais:</label>
+        <input type="text" id="Opcionais"  [(ngModel)]="veiculo.Opcionais" name="Opcionais" style="background-color: #f10fe6;">
+    </div>
+    <div class="pure-controls">
+        <button type="button" class="pure-button pure-button-primary text-dark" style="background-color: #87f10f;"(click)="desejaAlterar(veiculo.Id)">Alterar</button>
+        <button type="reset" class="pure-button text-dark"style="background-color: #87f10f;" >Limpar</button>
+        <button type="button" class="pure-button text-dark" style="background-color: #87f10f;" (click)="back()">Voltar</button>
+    </div>
+</form>
+</body>
